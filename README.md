@@ -4,7 +4,19 @@
 Build a lightweight **fleet telemetry data lake** that supports scalable analytics (fleet safety KPIs, driving behavior signals) using AWS Free Tier–friendly services.
 
 This project simulates vehicle telemetry and demonstrates how raw telemetry can be ingested, processed, and queried using modern cloud data lake architecture.
+---
+## Project Highlights
 
+- ✅ End-to-end AWS data lake pipeline for fleet telemetry  
+- ✅ Partitioned S3 layout (`dt=...`) + Athena partition management  
+- ✅ Spark ETL converting JSONL → Parquet  
+- ✅ Fleet safety analytics (overspeed + harsh braking KPIs)  
+---
+
+## Why this project
+
+Modern vehicles generate high-volume telemetry (speed, engine, GPS, events).  
+This project demonstrates a practical **data lake pipeline** for storing raw telemetry cheaply (S3), converting it into **analytics-ready Parquet**, and enabling fast SQL analysis via **Athena**.
 ---
 ## Project Structure
 ```
@@ -294,4 +306,42 @@ Possible extensions:
 • Add fleet anomaly detection  
 • Build dashboards using Amazon QuickSight
 
+---
 
+## Key Takeaways
+
+- Designed a **partitioned data lake** on S3 (RAW JSONL → PROCESSED Parquet) using `dt=YYYY-MM-DD` partitions.
+- Built a repeatable ETL workflow with **Spark (PySpark)** to transform and optimize telemetry for analytics.
+- Implemented **fleet safety signals** during ETL:
+  - `overspeed` (speed > 130 km/h)
+  - `harsh_brake` (speed drop ≥ 20 km/h between consecutive points)
+- Queried processed telemetry using **Athena SQL** to produce fleet KPIs:
+  - overspeed leaderboard
+  - harsh braking counts per vehicle/day
+- Used Parquet to reduce query cost and improve performance compared to scanning raw JSON.
+---
+## Skills Demonstrated
+
+- AWS: S3, Athena (and Glue-ready architecture)
+- Data Lake architecture (RAW → PROCESSED)
+- Partitioning strategy for incremental data ingestion
+- Spark ETL with PySpark
+- Parquet columnar storage optimization
+- SQL analytics for fleet telemetry KPIs
+---
+
+## Next Improvements (Roadmap)
+
+- Make ETL fully AWS-native with **AWS Glue** (Spark on AWS) and job scheduling.
+- Add schema evolution and data quality checks (missing GPS, invalid speed, timestamp gaps).
+- Add more telemetry fields (battery/temperature, idle time, trip distance) and anomaly detection queries.
+- Create a simple dashboard (QuickSight / Streamlit) for fleet safety monitoring.
+---
+
+## Author
+
+**Pattarin Thunyapar**  
+M.Sc. Data Analytics (Berlin) • Data Engineering / Analytics • AWS Data Lakes  
+- Interests: Fleet telemetry, IoT data platforms, Spark ETL, cloud analytics, data quality & partitioning  
+- LinkedIn: *(add your LinkedIn link)*  
+- Location: Berlin, Germany (open to EU roles / remote)
