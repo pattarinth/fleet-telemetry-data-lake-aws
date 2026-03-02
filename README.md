@@ -144,6 +144,8 @@ E --> F
 | Silver | Cleaned, structured Parquet data optimized for analytics |
 
 Bronze → Silver transformation is performed using PySpark.
+Silver is the analytics source-of-truth used by Athena; 
+Bronze preserves raw ingested telemetry for replay/debugging.
 
 ---
 
