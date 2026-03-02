@@ -1,9 +1,11 @@
 # Fleet Telemetry Data Lake (AWS S3 + Spark + Athena)
 
 ## Project Goal
+
 Build a lightweight **fleet telemetry data lake** that supports scalable analytics (fleet safety KPIs, driving behavior signals) using AWS Free Tier–friendly services.
 
 This project simulates vehicle telemetry and demonstrates how raw telemetry can be ingested, processed, and queried using modern cloud data lake architecture.
+
 ---
 ## Project Highlights
 
@@ -343,5 +345,4 @@ Possible extensions:
 **Pattarin Thunyapar**  
 M.Sc. Data Analytics (Berlin) • Data Engineering / Analytics • AWS Data Lakes  
 - Interests: Fleet telemetry, IoT data platforms, Spark ETL, cloud analytics, data quality & partitioning  
-- LinkedIn: *(add your LinkedIn link)*  
 - Location: Berlin, Germany (open to EU roles / remote)
