@@ -1,4 +1,12 @@
-# virtual envs
+cat >> .gitignore <<'EOF'
+
+# installers / binaries
+awscliv2.zip
+aws/
+*.zip
+*.exe
+
+# venv
 .venv/
 .venv_wsl/
 
@@ -8,9 +16,4 @@ data/
 *.jsonl
 *.crc
 _SUCCESS
-
-# spark / misc
-spark-warehouse/
-metastore_db/
-*.log
-__pycache__/
+EOF
