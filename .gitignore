@@ -1,0 +1,16 @@
+# virtual envs
+.venv/
+.venv_wsl/
+
+# data outputs
+data/
+*.parquet
+*.jsonl
+*.crc
+_SUCCESS
+
+# spark / misc
+spark-warehouse/
+metastore_db/
+*.log
+__pycache__/
