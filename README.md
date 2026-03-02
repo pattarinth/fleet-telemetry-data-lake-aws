@@ -19,6 +19,7 @@ This project simulates vehicle telemetry and demonstrates how raw telemetry can 
 
 Modern vehicles generate high-volume telemetry (speed, engine, GPS, events).  
 This project demonstrates a practical **data lake pipeline** for storing raw telemetry cheaply (S3), converting it into **analytics-ready Parquet**, and enabling fast SQL analysis via **Athena**.
+
 ---
 ## Project Structure
 ```
