@@ -55,15 +55,20 @@ fleet-telemetry-data-lake/
 
 ## Architecture
 ```
-Telemetry (JSONL)
+Vehicle Telemetry Generator
         ↓
-S3 RAW Layer
+Bronze (RAW JSON)
+S3 /bronze/telemetry/
+
+        ↓ Spark ETL
+
+Silver (Parquet optimized)
+S3 /silver/telemetry/
+
         ↓
-Spark ETL (PySpark)
-        ↓
-S3 PROCESSED Layer (Parquet)
-        ↓
+
 Athena SQL Analytics
+Fleet Safety KPIs
 
 ```
 ---
@@ -130,6 +135,16 @@ C --> D
 D --> E
 E --> F
 ```
+---
+## Data Lake Zones
+
+| Zone | Description |
+|-----|-------------|
+| Bronze | Raw JSON telemetry as ingested from vehicles |
+| Silver | Cleaned, structured Parquet data optimized for analytics |
+
+Bronze → Silver transformation is performed using PySpark.
+
 ---
 
 ## Telemetry Schema
